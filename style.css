@@ -40,11 +40,43 @@ body{
     translate: -50% -50%;
     animation: anitirotate 5s linear infinite;
     background-image: url("moon.png");
+    background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    transition: .5s;
+}
+.moon:hover::after{
+    width: 200%;
+    height: 200%;
+    z-index: 1000;
+    filter: drop-shadow(0 0 20px white) drop-shadow(0 0 500px black);
+    backdrop-filter: blur(10px);
 }
 .moon > p{
     font-size: 140px;
+}
+
+@media screen and (max-width: 800px) {
+    .wrapper{
+        gap: 50px;
+    }
+    .moon{
+        width: 350px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .wrapper{
+        gap: 40px;
+    }
+    .moon{
+        width: 250px;
+    }
+    .moon > p{
+        font-size: 60px;
+    }
+    .text{
+        font-size: 50px;
+    }
 }
 
 @keyframes rotate {
