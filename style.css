@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: Chalkduster;
+}
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    gap: 75px;
+}
+.text{
+    font-size: 120px;
+}
+.moon{
+    border-radius: 50%;
+    width: 400px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: flex-end;
+    animation: rotate 5s linear infinite;
+    position: relative;
+}
+.moon::after{
+    content: "";
+    width: 75%;
+    height: 75%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    animation: anitirotate 5s linear infinite;
+    background-image: url("moon.png");
+    background-position: center;
+    background-size: contain;
+}
+.moon > p{
+    font-size: 140px;
+}
+
+@keyframes rotate {
+    to{
+        rotate: 360deg;
+    }
+}
+
+@keyframes anitirotate {
+    to{
+        rotate: -360deg;
+    }
+}
